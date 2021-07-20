@@ -12,10 +12,6 @@ impl Config {
     pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
         args.next();
 
-        if args.len() < 3 {
-            return Err("not enough arguments");
-        }
-
         let query = match args.next() {
             Some(arg) => arg,
             None => return Err("Didn't get a query string"),
